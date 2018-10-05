@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "watch": ["src", "templates"],
+  "ext": "ts,njk",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "cross-env NODE_ENV=debug ts-node -r dotenv/config src/main.ts"
+}

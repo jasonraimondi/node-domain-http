@@ -1,0 +1,67 @@
+{% extends 'layouts/blank.njk' %}
+
+{% block main %}
+
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action="/register" method="post">
+        <label for="first-name">
+            First <sup>
+                <small>*</small>
+            </sup>
+            <input type="text"
+                   required
+                   id="first-name"
+                   name="firstName"
+                   value="{{ firstName }}"
+                   placeholder="Johnny"
+            >
+        </label>
+
+        <label for="last-name">
+            Last
+            <input type="text"
+                   id="last-name"
+                   name="lastName"
+                   value="{{ lastName }}"
+                   placeholder="Appleseed"
+            >
+        </label>
+
+        <label for="email">
+            Email <sup>
+                <small>*</small>
+            </sup>
+            <input type="text"
+                   required
+                   id="email"
+                   name="email"
+                   value="{{ email }}"
+                   placeholder="johnny@appleseed.com"
+            >
+        </label>
+
+        <label for="password">
+            Password <sup>
+                <small>*</small>
+            </sup>
+            <input type="password"
+                   required
+                   id="password"
+                   name="password"
+                   value="{{ password }}"
+                   placeholder="min 6 characters" minlength="6"
+            >
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}
+

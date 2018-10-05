@@ -1,0 +1,27 @@
+version: '3.7'
+
+volumes:
+  couchdb_data: {}
+  couchdb_config: {}
+
+services:
+  web:
+    image: node:10-alpine
+    working_dir: /app
+    command: npm run serve
+    ports:
+      - '3003:3000'
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+
+  db:
+    image: couchdb
+    ports:
+      - '5984:5984'
+    volumes:
+      - couchdb_data:/opt/couchdb/data
+      - couchdb_config:/opt/couchdb/etc
+    env_file:
+    - .env

@@ -44,7 +44,7 @@
     "@types/node": "^10.11.0",
     "@types/oauth2-server": "^3.0.9",
     "@types/webpack": "^4.4.12",
-    "aws-sdk": "^2.325.0",
+    "aws-sdk": "^2.814.0",
     "chai": "^4.1.2",
     "cross-env": "^5.2.0",
     "express-rate-limit": "^3.2.0",
